@@ -1,0 +1,28 @@
+while True:
+    respuesta1 = input("¿Qué quieres hacer? registrarte/logearte\n").lower()
+
+    if respuesta1 == "registrarte":
+        usuario = input("Indica el nombre de usuario\n").lower()
+        contraseña = input("Indica la contraseña del usuario\n").lower()
+        print("Usuario registrado exitosamente.")
+
+    elif respuesta1 == "logearte":
+        try:
+            usuario
+        except NameError:
+            print("Error, no tienes usuario registrado.")
+        else:
+            log1 = input("Indica el nombre de usuario\n").lower()
+            if log1 == usuario:
+                log2 = input("Indica la contraseña\n").lower()
+                if log2 == contraseña:
+                    print("¡Bienvenido/a, {}!".format(usuario))
+                    break
+                else:
+                    print("Contraseña incorrecta.")
+            else:
+                print("Usuario no encontrado.")
+
+    else:
+        print("Respuesta no válida. Por favor, elige 'registrarte' o 'logearte'.")
+
